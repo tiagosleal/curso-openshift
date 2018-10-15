@@ -1,0 +1,9 @@
+version: "3"
+services:
+  python_app:
+    image: "python_app"
+    hostname: "python-app"
+    ports:
+    - "80:8080"
+    volumes:
+    - /mnt/nfs:/root/python-openshift/static/imagens
