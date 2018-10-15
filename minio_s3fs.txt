@@ -1,0 +1,7 @@
+# Utiliza o minio (https://www.minio.io/)
+# monta a pasta utilizada no servidor
+minio server /mnt/data
+
+# Monta s3fs
+s3fs docker /mnt/nfs/ -o allow_other,use_path_request_style,nonempty,url=http://192.168.33.53:9000,passwd_file=/etc/passwd-s3fs
+
