@@ -1,0 +1,8 @@
+# docker-compose
+# Serve pra automatizar a criacao de containers
+
+# Instala o compose
+# https://docs.docker.com/compose/install/#install-compose
+
+# Executa o compose (apos criar o arquivo docker-compose.yml)
+docker-compose up
