@@ -1,6 +1,9 @@
 # Cria container
 docker run -t -i busybox ping -c3 8.8.8.8
 
+# Cria container e sai do stdout (parametro -d)
+docker run -d -ti --rm -p 80:80 --name app1 app1 apachectl -DFOREGROUND
+
 # Remove containers criados e que estao parados (ja executaram) 
 docker system prune
 
@@ -35,3 +38,15 @@ docker stop <id_container>
 # Remover container
 docker rm <id_container>
 
+# Criar imagem a partir de um container
+docker commit <id_container> <nome_imagem_a_criar>
+
+# Exporta imagem para arquivo
+docker save <nome_imagem> > nome_arq.tar.gz
+
+# Importa imagem de um arquivo
+docker load -i nome_arq.tar.gz
+
+# Criar build da imagem
+# (precisa criar o arquivo Dockerfile primeiro)
+docker build <dire_dockerfile> -t <nome_imagem>
