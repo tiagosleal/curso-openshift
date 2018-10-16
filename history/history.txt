@@ -1,0 +1,999 @@
+    1  clear
+    2  ls
+    3  docker
+    4  docker --version
+    5  clear
+    6  ip a
+    7  docker 
+    8  docker ps
+    9  docker container ls
+   10  clear
+   11  docker images
+   12  docker images kls
+   13  docker images ls
+   14  docker search centos
+   15  docker search graylog
+   16  docker search elasticsearch
+   17  docker search mongodb
+   18  docker pull ubuntu
+   19  docker image ls
+   20  docker history ubuntu
+   21  docker history ubuntu --notrunk
+   22  docker history ubuntu --notruk
+   23  docker history ubuntu --no-trunk
+   24  docker history ubuntu --no-trunc
+   25  clear
+   26  docker run -t -i ubuntu bash -c "ping -c3 8.8.8.8"
+   27  docker run -t -i ubuntu bash -c "/bin/ping -c3 8.8.8.8"
+   28  docker run -t -i ubuntu bash -c "/sbin/ping -c3 8.8.8.8"
+   29  docker run -t -i ubuntu bash -c "/usr/sbin/ping -c3 8.8.8.8"
+   30  docker run -t -i ubuntu bash -c "/usr/bin/ping -c3 8.8.8.8"
+   31  locate ping
+   32  clear
+   33  exit
+   34  clear
+   35  docker pull busybox
+   36  docker run -t -i busybox ping -c3 8.8.8.8
+   37  docker ps
+   38  docker ls
+   39  docker container ls
+   40  clear
+   41  docker ps -a
+   42  docker system prune
+   43  clear
+   44  docker ps -a
+   45  clear
+   46  docker run -t -i --rm busybox ping -c3 8.8.8.8
+   47  docker container ls
+   48  docker container ls -s
+   49  docker container ls -a
+   50  clear
+   51  docker run -t -i --rm ubuntu bash
+   52  history
+   53  docker images ls
+   54  docker image ls
+   55  docker container ls
+   56  docker container ls -a
+   57  docker run -t -i ubuntu bash
+   58  docker container ls -a
+   59  docker container ls
+   60  docker start -t -i ubuntu bash
+   61  docker start c76caf9343b6
+   62  docker container ls
+   63  docker container ls -a
+   64  clear
+   65  docker exec -ti c76caf9343b6 bash
+   66  docker logs c76caf9343b6
+   67  docker exec -ti c76caf9343b6 bash
+   68  clear
+   69  ls
+   70  ls -a
+   71  clear
+   72  docker exec -ti c76caf9343b6 bash
+   73  docker stop c76caf9343b6
+   74  docker ps
+   75  docker ps -a
+   76  docker rm c76caf9343b6
+   77  docker ps -a
+   78  docker ps
+   79  clear
+   80  docker image
+   81  docker image ls
+   82  docker image rm busybox
+   83  docker image ls
+   84  clear
+   85  docker run -t -i ubuntu bash
+   86  docker exec -t -i ubuntu bash
+   87  docker ls
+   88  docker ls -a
+   89  docker container ls
+   90  docker container ls -a
+   91  docker exec -t -i 3cd81505d3b1 bash
+   92  docker start -t -i 3cd81505d3b1 bash
+   93  docker system prune
+   94  docker run -t -i ubuntu bash
+   95  docker container ls
+   96  docker container ls -a
+   97  docker exec -t -i e4ec91041af5 bash
+   98  docker start -t -i e4ec91041af5 bash
+   99  docker start -t -i e4ec91041af5
+  100  docker start e4ec91041af5
+  101  docker container ls -a
+  102  docker container ls
+  103  docker exec -t -i e4ec91041af5 bash
+  104  docker ps
+  105  docker commit e4ec91041af5 apache
+  106  docker images
+  107  docker image ls
+  108  docker run -ti -p 80:80 apache apachectl -DFOREGROUND
+  109  docker image ls
+  110  docker PS
+  111  docker ps
+  112  iptables -nvxL
+  113  clear
+  114  iptables -nvxL
+  115  iptables -nvxL -t nat
+  116  clear
+  117  iptables -nL -t nat
+  118  docker run -ti --rm --name app1 apache bash
+  119  clear
+  120  docker ps
+  121  docker commit app1 app1
+  122  clear
+  123  docker ps
+  124  docker stop ec0926b6bf6d
+  125  docker rm ec0926b6bf6d
+  126  clear
+  127  docker ps
+  128  #docker run -ti --rm -p 80:80 --name app1 app1 apachectl -DFOREGROUND
+  129  docker stop app1
+  130  docker run -ti --rm -p 80:80 --name app1 app1 apachectl -DFOREGROUND
+  131  docker ps
+  132  docker run -d -ti --rm -p 80:80 --name app1 app1 apachectl -DFOREGROUND
+  133  docker ps
+  134  docker save app1 > app1.tar.gz
+  135  ll
+  136  scp app1.tar.gz root@docker52:/root/
+  137  scp app1.tar.gz root@192.168.33.52:/root/
+  138  clear
+  139  scp app1.tar.gz root@192.168.33.52:/root/
+  140  clear
+  141  docker image ls
+  142  docker image pull centos
+  143  docker run centos 
+  144  docker ps
+  145  docker ps -a
+  146  docker rm 3616d848608e
+  147  docker run -ti centos bash
+  148  docker ps
+  149  docker save 376b8d925297 > app1_v2.tar.gz
+  150  docker commit affectionate_tesla app1:v2
+  151  docker save app1:v2 > app1_v2.tar.gz
+  152  docker images
+  153  docker ps -a
+  154  docker system prune
+  155  clear
+  156  docker ps -a
+  157  docker stop 376b8d925297
+  158  docker stop 538e2ca63094
+  159  docker stop e4ec91041af5
+  160  docker ps
+  161  clear
+  162  docker run -d -ti --rm -p 80:80 --name app1v2 app1:v2 nginx -g "daemon off;"
+  163  ls
+  164  scp app1_v2.tar.gz root@192.168.33.52:/root/
+  165  docker run -dti --rm --name app_git ubuntu
+  166  docker exec -t -i app_git bash
+  167  clear
+  168  docker ps
+  169  docker commit app_git python_app
+  170  docker stop app_git
+  171  docker rm app_git
+  172  docker ps
+  173  docker ps -a
+  174  docker stop 702a5100a6b9
+  175  clear
+  176  docker images
+  177  docker run -dti --rm -p 80:8080 --name python python_app python /python-openshift/app.py
+  178  docker stop python_app
+  179  docker ps
+  180  docker stop python
+  181  docker start python
+  182  docker ps -a
+  183  docker run -dti --rm -p 80:8080 --name python python_app python /python-openshift/app.py
+  184  docker stop python
+  185  docker run -dti -p 80:8080 --name python python_app python /python-openshift/app.py
+  186  docker stop python
+  187  docker start python
+  188  docker stop python
+  189  docker run -dti --rm -p 80:8080 --name python python_app python /python-openshift/app.py
+  190  docker rm python
+  191  docker run -dti --rm -p 80:8080 --name python python_app python /python-openshift/app.py
+  192  docker ps -a
+  193  docker ps
+  194  docker stop python 
+  195  docker run -dti --rm -p 80:8080 -v images:/python-openshift/static/images --name python python_app python /python-openshift/app.py
+  196  docker volumes
+  197  docker volumes ls
+  198  docker volume ls
+  199  docker volume inspect images
+  200  docker ps -a
+  201  docker stop python 
+  202  docker ps -a
+  203  docker ps
+  204  docker run -dti --rm -p 80:8080 -v images:/python-openshift/static/images --name python python_app python /python-openshift/app.py
+  205  docker volume inspect images
+  206  ls /var/lib/docker/volumes/images/_data
+  207  ls /var/lib/docker/volumes/images/
+  208  ls /var/lib/docker/volumes/images/_data/
+  209  ls -a /var/lib/docker/volumes/images/_data/
+  210  clear
+  211  ls -a /var/lib/docker/volumes/images/_data/
+  212  docker stop python 
+  213  docker ps
+  214  docker ps -a
+  215  docker system prune
+  216  clear
+  217  docker ps -a
+  218  docker volume ls
+  219  docker volume inspect images
+  220  docker volume rm images
+  221  docker volume ls
+  222  docker run -dti --rm -p 80:8080 -v imagens:/python-openshift/static/imagens --name python python_app python /python-openshift/app.py
+  223  ls -a /var/lib/docker/volumes/imagens/_data/
+  224  clear
+  225  docker stop python 
+  226  docker run -dti --rm -p 80:8080 -v imagens:/python-openshift/static/imagens --name python python_app python /python-openshift/app.py
+  227  ls -a /var/lib/docker/volumes/imagens/_data/
+  228  ls
+  229  mkdir python_app
+  230  clear
+  231  ls
+  232  cd python_app/
+  233  clear
+  234  ls
+  235  pwd
+  236  clear
+  237  gedit
+  238  gedit Dockerfile
+  239  vim Dockerfile
+  240  docker images
+  241  docker build /root/ -t python_app
+  242  cd ..
+  243  docker build /root/ -t python_app
+  244  docker build /root/python_app/ -t python_app
+  245  ls
+  246  cd python_app/
+  247  ls
+  248  vim Dockerfile 
+  249  cd ..
+  250  docker build /root/python_app/ -t python_app
+  251  docker images
+  252  docker image rm 5b6b1c3ebe1e
+  253  docker ps
+  254  docker stop python
+  255  docker ps -a
+  256  docker rm 3cdc7ecfcfe1
+  257  docker image rm 5b6b1c3ebe1e
+  258  docker images
+  259  docker run -dti --rm -p 80:8080 -v imagens:/python-openshift/static/imagens --name python python_app
+  260  ls -a /var/lib/docker/volumes/imagens/_data/
+  261  docker stop python
+  262  docker run -dti --rm -p 80:8080 -v imagens:/root/python-openshift/static/imagens --name python python_app
+  263  ls
+  264  cd python_app/
+  265  ls
+  266  cat Dockerfile 
+  267  clear
+  268  history
+  269  docker ps
+  270  docker stop python
+  271  docker ps -a
+  272  clear
+  273  apt install s3fs -y
+  274  vim /etc/passwd-s3fs
+  275  chmod 640 /etc/passwd-s3fs 
+  276  ls /mnt/
+  277  mkdir /mnt/nfs
+  278  s3fs docker /mnt/nfs/ -o allow_other,user_path_request_style, nonempty, url=http://192.168.33.53:9000, passwd_file=/etc/passwd-s3fs -f
+  279  s3fs docker /mnt/nfs/ -o allow_other,use_path_request_style, nonempty, url=http://192.168.33.53:9000, passwd_file=/etc/passwd-s3fs -f
+  280  s3fs docker /mnt/nfs/ -o allow_other,use_path_request_style, noempty, url=http://192.168.33.53:9000, passwd_file=/etc/passwd-s3fs -f
+  281  s3fs docker /mnt/nfs/ -o allow_other,use_path_request_style, nonempty, url=http://192.168.33.53:9000, passwd_file=/etc/passwd-s3fs -f
+  282  s3fs docker /mnt/nfs/ -o allow_other,use_path_request_style,nonempty,url=http://192.168.33.53:9000,passwd_file=/etc/passwd-s3fs -f
+  283  s3fs docker /mnt/nfs/ -o allow_other,use_path_request_style,nonempty,url=http://192.168.33.53:9000,passwd_file=/etc/passwd-s3fs
+  284  ls /mnt/nfs/
+  285  ls
+  286  cp Dockerfile /mnt/nfs/
+  287  vim /etc/passwd-s3fs 
+  288  clear
+  289  docker ps
+  290  docker ps -a
+  291  docker run -dti --rm -p 80:8080 -v /mnt/nfs:/root/python-openshift/static/imagens --name python python_app
+  292  docker volumes
+  293  docker volume
+  294  docker volume ls
+  295  docker volume rm imagens 
+  296  docker stop python
+  297  docker run -dti --rm -p 80:8080 -v /mnt/nfs/:/root/python-openshift/static/imagens --name python python_app
+  298  docker volume ls
+  299  docker exec python bash
+  300  docker exec -ti python bash
+  301  ls
+  302  curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  303  chmod +x /usr/local/bin/docker-compose
+  304  clear
+  305  docker-compose -h
+  306  ls
+  307  clear
+  308  ls
+  309  vim docker-compose.yml
+  310  docker ps
+  311  docker stop python
+  312  docker ps
+  313  docker ps -a
+  314  clear
+  315  docker-compose docker-compose.yml 
+  316  docker-compose up
+  317  docker ps -a
+  318  docker ps
+  319  vim docker-compose.yml 
+  320  docker-compose up
+  321  clear
+  322  vim docker-compose.yml 
+  323  docker-compose up
+  324  ls
+  325  docker ps
+  326  docker ps -a
+  327  docker system prune
+  328  docker ps -a
+  329  docker ps
+  330  clear
+  331  ls
+  332  docker images
+  333  ls
+  334  clear
+  335  ls
+  336  ls /mnt/nfs/
+  337  ls
+  338  clear
+  339  ls
+  340  clear
+  341  ls
+  342  cd ..
+  343  ls
+  344  mkdir php-openshift
+  345  ls
+  346  cd php-openshift/
+  347  ls
+  348  clear
+  349  ls
+  350  cp ../python_app/Dockerfile ./
+  351  ls
+  352  vim Dockerfile 
+  353  ls
+  354  clear
+  355  vim /etc/passwd-s3fs 
+  356  clear
+  357  #s3fs registry /nfs/registry -o allow_other,use_path_request_style,nonempty,url=http://192.168.33.53:9000,passwd_file=/etc/passwd-s3fs
+  358  mkdir /nfs/registry
+  359  mkdir -p /nfs/registry
+  360  s3fs registry /nfs/registry -o allow_other,use_path_request_style,nonempty,url=http://192.168.33.53:9000,passwd_file=/etc/passwd-s3fs
+  361  df -h
+  362  clear
+  363  docker ps
+  364  docker ps 
+  365  docker system prune
+  366  clear
+  367  #docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/registry/:/var/lib/registry registry:2
+  368  umound /nfs/registry/
+  369  umount /nfs/registry/
+  370  mkdir -p /mnt/registry
+  371  s3fs registry /mnt/registry -o allow_other,use_path_request_style,nonempty,url=http://192.168.33.53:9000,passwd_file=/etc/passwd-s3fs
+  372  df -h
+  373  ls
+  374  clear
+  375  ls
+  376  docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/registry/:/var/lib/registry registry:2
+  377  clear
+  378  ls
+  379  clear
+  380  docker stop registry
+  381  docker rm registry
+  382  clear
+  383  mkdir /mnt/registry/auth
+  384  docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/registry/:/var/lib/registry -v /mnt/registry/auth:/auth -e "REGISTRY_AUTH=htpasswd" -e "REGISTRY_AUTH_HTPASSWD_REALM=Curso Docker" -e "REGISTRY_AUTH_HTPASSWD=/auth/htpasswd" registry:2
+  385  clear
+  386  docker logs registry
+  387  cd /mnt/registry/
+  388  ls
+  389  docker run --rm --entrypoint htpasswd registry:2 -Bbn tiago tiago >> /mnt/registry/auth/htpasswd
+  390  cat /mnt/registry/auth/htpasswd 
+  391  clear
+  392  docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/registry/:/var/lib/registry -v /mnt/registry/auth:/auth -e "REGISTRY_AUTH=htpasswd" -e "REGISTRY_AUTH_HTPASSWD_REALM=Curso Docker" -e "REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd" registry:2
+  393  docker stop registry
+  394  docker rm registry
+  395  docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/registry/:/var/lib/registry -v /mnt/registry/auth:/auth -e "REGISTRY_AUTH=htpasswd" -e "REGISTRY_AUTH_HTPASSWD_REALM=Curso Docker" -e "REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd" registry:2
+  396  clear
+  397  docker images
+  398  docker tag php_app 192.168.33.51:5000/php_app
+  399  docker push 192.168.33.51:5000/php_app
+  400  docker images
+  401  vim /etc/docker/daemon.json
+  402  service docker restart
+  403  docker push 192.168.33.51:5000/php_app
+  404  docker login 192.168.33.51:5000
+  405  docker push 192.168.33.51:5000/php_app
+  406  clear
+  407  docker images
+  408  ls
+  409  cd /root/
+  410  ls
+  411  cd php-openshift/
+  412  ls
+  413  cd ..
+  414  ls
+  415  mkdir docker-registry
+  416  ls
+  417  cp php-openshift/docker-compose.yml ./docker-registry/
+  418  cd docker-registry/
+  419  ls
+  420  vim docker-compose.yml 
+  421  docker ps
+  422  docker stop registry
+  423  docker rm registry
+  424  clear
+  425  vim docker-compose.yml 
+  426  clear
+  427  docker-compose up
+  428  vim docker-compose.yml 
+  429  docker-compose up
+  430  vim docker-compose.yml 
+  431  clear
+  432  docker-compose up
+  433  docker-compose up -d
+  434  docker ps
+  435  docker inspect ed5d7f9b9f90
+  436  docker network ls
+  437  clear
+  438  ip a
+  439  clear
+  440  docker network create --subnet 10.100.0.0/24 tiago
+  441  docker network ls
+  442  ip a
+  443  docker network inspect tiago 
+  444  ls
+  445  cd ..
+  446  ls
+  447  mkdir php
+  448  cd php
+  449  clear
+  450  ls
+  451  vim docker-compose.yml
+  452  docker-compose up
+  453  vim docker-compose.yml
+  454  docker-compose up
+  455  vim docker-compose.yml
+  456  docker-compose up
+  457  docker-compose up -d
+  458  docker-compose ps
+  459  docker ps
+  460  docker inspect 0b956bd2e839
+  461  vim docker-compose.yml
+  462  docker stop php
+  463  docker stop web_php
+  464  docker ps
+  465  docker stop php_web_1
+  466  docker rm php_web_1
+  467  docker-compose up -d
+  468  vim docker-compose.yml 
+  469  docker-compose up -d
+  470  vim docker-compose.yml 
+  471  docker-compose up -d
+  472  clear
+  473  docker ps
+  474  docker inspect php_web_1
+  475  vim docker-compose.yml 
+  476  apt install nginx
+  477  service start nginx
+  478  services start nginx
+  479  services nginx start
+  480  systemctl start nginx
+  481  systemctl status nginx
+  482  vim /etc/nginx/sites-enabled/default
+  483  systemctl restart nginx
+  484  ls
+  485  docker-compose status
+  486  docker-compose ps
+  487  vim docker-compose.yml 
+  488  docker-compose up -d
+  489  vim docker-compose.yml 
+  490  clear
+  491  ls
+  492  docker run --rm -ti -d --net tiago --ip 10.100.0.58 python_app
+  493  docker run --rm -ti -d --net tiago --ip 10.100.0.59 python_app
+  494  docker ls
+  495  docker ps
+  496  docker inspect practical_spence
+  497  ping 10.100.0.59
+  498  ping 10.100.0.58
+  499  clear
+  500  systemctl status nginx
+  501  systemctl start nginx
+  502  systemctl status nginx
+  503  vim docker-compose.yml 
+  504  vim /etc/nginx/sites-enabled/default
+  505  systemctl start nginx
+  506  ls
+  507  vim /etc/nginx/sites-enabled/default
+  508  systemctl restart nginx
+  509  docker ps
+  510  docker stop practical_spence
+  511  ping 10.100.0.59
+  512  ping 10.100.0.58
+  513  vim /etc/nginx/sites-enabled/default
+  514  systemctl restart nginx
+  515  docker ps
+  516  docker stop relaxed_perlman
+  517  docker start relaxed_perlman
+  518  docker run --rm -ti -d --name app01 --net tiago --ip 10.100.0.59 python_app
+  519  docker run --rm -ti -d --name app02 --net tiago --ip 10.100.0.59 python_app
+  520  docker run --rm -ti -d --name app02 --net tiago --ip 10.100.0.58 python_app
+  521  docker stop relaxed_perlman
+  522  docker stop app01
+  523  docker stop app02
+  524  docker ps
+  525  clear
+  526  ls
+  527  vim docker-compose.yml 
+  528  docker-compose up -d
+  529  docker stop php_web_1
+  530  docker-compose up -d
+  531  docker inspect php_web_1
+  532  docker ps -a
+  533  docker system prune
+  534  docker ps
+  535  docker stop fa2d3a923cef
+  536  docker stop ed5d7f9b9f90
+  537  docker ps
+  538  docker ps -a
+  539  docker system prune
+  540  clear
+  541  docker ps
+  542  docker ps -a
+  543  docker node
+  544  docker node ls
+  545  docker swarm init
+  546  docker swarm init --advertise-addr= 192.168.33.51
+  547  docker swarm init --advertise-addr=192.168.33.51
+  548  docker node ls
+  549  clear
+  550  docker node ls
+  551  ls
+  552  cd ..
+  553  ls
+  554  cd docker-registry/
+  555  ls
+  556  docker stack deploy -c docker-compose.yml registry
+  557  docker service ls
+  558  docker ps
+  559  docker node ls
+  560  docker service ls
+  561  docker service create python python_app 
+  562  journalctl -xe
+  563  journalctl -xf
+  564  docker service create -p 8080:80 python python_app 
+  565  docker images
+  566  docker service ls
+  567  docker service rm angry_dubinsky
+  568  docker service rm y4psgv5xf6wc
+  569  cler
+  570  clear
+  571  docker service ls
+  572  #docker service create -p 8080:80 python python_app 
+  573  df -h
+  574  #docker service create -p 8080:80 python python_app 
+  575  docker service create -p 8080:80 python python_app 
+  576  docker service create -p 8080:80 python_app 
+  577  docker service rm zen_bhaskara
+  578  docker service create -p 8080:80 python_app 
+  579  docker service ls
+  580  docker images
+  581  docker tag php_app 192.168.33.51:5000/python_app
+  582  docker push 192.168.33.51:5000/python_app
+  583  docker images
+  584  docker service ls
+  585  docker ps
+  586  clear
+  587  docker ps
+  588  docker service ls
+  589  lsof -i -P -n
+  590  clear
+  591  ls /mnt/nfs/
+  592  clear
+  593  docker service ls
+  594  docker service rm friendly_goldwasser
+  595  clear
+  596  docker service ls
+  597  docker service create -p 8080:80 python_app 
+  598  docker service rm friendly_goldwasser
+  599  docker service ls
+  600  docker service rm nostalgic_swirles
+  601  docker service create -p 8080:8080 python_app 
+  602  docker service ls
+  603  docker service create -p 8081:80 --name web apache apachectl -DFOREGROUND
+  604  docker images
+  605  docker tag apache 192.168.33.51:5000/apache
+  606  docker push 192.168.33.51:5000/apache
+  607  docker service update -p 8081:80 --name web 192.168.33.51:5000/apache apachectl -DFOREGROUND
+  608  docker service update --image 192.168.33.51:5000/apache web
+  609  docker service ls
+  610  docker service update --image 192.168.33.51:5000/apache web
+  611  clear
+  612  docker service rm web
+  613  docker service create -p 8081:80 --name web 192.168.33.51:5000/apache apachectl -DFOREGROUND
+  614  docker service rm web
+  615  docker service create -p 8081:80 --name web --replicas=2 192.168.33.51:5000/apache apachectl -DFOREGROUND
+  616  docker service update --image 192.168.33.51:5000/apache web
+  617  docker service rm web
+  618  docker service create -p 8081:80 --name web --replicas=2 192.168.33.51:5000/apache apachectl -DFOREGROUND
+  619  docker service rm web
+  620  docker ps
+  621  docker service ls
+  622  docker ps
+  623  docker service create -p 8081:80 --name web --replicas=2 192.168.33.51:5000/apache apachectl -DFOREGROUND
+  624  ls
+  625  cd ..
+  626  ls
+  627  cd php
+  628  ls
+  629  vim docker-compose.yml 
+  630  docker-compose up
+  631  vim docker-compose.yml 
+  632  docker-compose up
+  633  vim docker-compose.yml 
+  634  docker-compose up
+  635  ls
+  636  docker stack deploy -c docker-compose.yml web
+  637  docker service ls
+  638  docker service rm web_web
+  639  docker stack deploy -c docker-compose.yml php
+  640  docker service ls
+  641  docker stack ls
+  642  docker stack rm php
+  643  clear
+  644  ls
+  645  clear
+  646  ls
+  647  clear
+  648  cd ..
+  649  ls
+  650  mkdir go-openshift
+  651  ls
+  652  cd go-openshift/
+  653  clear
+  654  ls
+  655  vim Dockerfile
+  656  clear
+  657  ls
+  658  docker build . -t go_app
+  659  docker images
+  660  docker system prune
+  661  docker images
+  662  clear
+  663  ls
+  664  vim Dockerfile 
+  665  ls
+  666  vim Dockerfile 
+  667  ls
+  668  vim Dockerfile 
+  669  docker build . -t go_app
+  670  vim Dockerfile 
+  671  docker build . -t go_app
+  672  docker images
+  673  docker system prune
+  674  clear
+  675  ls
+  676  vim Dockerfile 
+  677  ls
+  678  mkdir teste
+  679  cd teste/
+  680  git clone https://github.com/AlissonMMenezes/go-openshift.git 
+  681  ls
+  682  cd go-openshift/
+  683  ls
+  684  vim main.go 
+  685  ls
+  686  vim hello 
+  687  ;s
+  688  cd ..
+  689  ls
+  690  vim go-openshift/
+  691  cd ..
+  692  ls
+  693  vim Dockerfile 
+  694  ls
+  695  cd teste/
+  696  ls
+  697  cd go-openshift/
+  698  ls
+  699  cd ..
+  700  ls
+  701  clear
+  702  ls
+  703  docker build . -t go_app
+  704  clear
+  705  ls
+  706  clear
+  707  ls
+  708  clear
+  709  ls
+  710  clear
+  711  ls
+  712  clear
+  713  docker images
+  714  docker run --rm -ti -d --name -p 8083:8080 appgo01 go_app
+  715  docker run --rm -ti -d -p 8083:8080 --name appgo01 go_app
+  716  docker ps
+  717  clear
+  718  ls
+  719  rm -rf teste/
+  720  ls
+  721  clear
+  722  vim Dockerfile 
+  723  clear
+  724  ls
+  725  docker tag go_app 192.168.33.51:5000/go_app
+  726  docker push 192.168.33.51:5000/go_app
+  727  docker images
+  728  docker ps
+  729  docker rm -f appgo01
+  730  clear
+  731  ls
+  732  cd ,,
+  733  lcd ..
+  734  cd ..
+  735  ls
+  736  cd php
+  737  ls
+  738  cp docker-compose.yml ../go-openshift/
+  739  cd ../go-openshift/
+  740  ls
+  741  vim docker-compose.yml 
+  742  cd ..
+  743  cd php-openshift/
+  744  ls
+  745  vim docker-compose.yml 
+  746  cd ..
+  747  ls
+  748  cd go-openshift/
+  749  ls
+  750  clear
+  751  ls
+  752  vim docker-compose.yml 
+  753  docker-compose up
+  754  vim ../php-openshift/
+  755  vim ../php-openshift/docker-compose.yml 
+  756  vim docker-compose.yml 
+  757  docker stack deploy -c docker-compose.yml go
+  758  docker service ls
+  759  clear
+  760  ls
+  761  vim docker-compose.yml 
+  762  clear
+  763  ls
+  764  vim Dockerfile 
+  765  ls
+  766  cd ..
+  767  ls
+  768  cp -a go-openshift/ go-openshift-alterado/
+  769  ls
+  770  cd go-openshift-alterado/
+  771  ls
+  772  vim Dockerfile 
+  773  ls
+  774  vim docker-compose.yml 
+  775  ls
+  776  vim Dockerfile 
+  777  docker build . -t go_app_alterado
+  778  docker images ls
+  779  docker image ls
+  780  docker image search go
+  781  docker search go
+  782  docker search golang
+  783  docker introspect golang
+  784  docker info golang
+  785  docker ls golang
+  786  docker inspect golang
+  787  docker inspect image golang
+  788  docker image inspect golang
+  789  docker image ls
+  790  clear
+  791  docker ps
+  792  docker stop d2521906a229
+  793  clear
+  794  ls
+  795  vim docker-compose.yml 
+  796  ls
+  797  cd ..
+  798  ls
+  799  cd python_app/
+  800  ls
+  801  vim Dockerfile 
+  802  clear
+  803  ls
+  804  docker build . -t 192.168.33.51:5000/python_app --no-cache
+  805  docker images
+  806  docker system prune
+  807  clear
+  808  docker images
+  809  docker push 192.168.33.51:5000/python_app:latest
+  810  ls
+  811  vim docker-compose.yml 
+  812  ls
+  813  #docker stack deploy -c docker-compose.yml python_app
+  814  docker service ls
+  815  systemctl stop nginx
+  816  #docker stack deploy -c docker-compose.yml python
+  817  docker stack deploy -c docker-compose.yml python
+  818  vim docker-compose.yml 
+  819  docker service ls
+  820  vim docker-compose.yml 
+  821  docker system prune
+  822  docker ps
+  823  docker stack deploy -c docker-compose.yml python
+  824  vim docker-compose.yml 
+  825  docker stack deploy -c docker-compose.yml python
+  826  docker service ls
+  827  clear
+  828  docker service ls
+  829  docker ps
+  830  ls
+  831  vim Dockerfile 
+  832  clear
+  833  docker build . -t 192.168.33.51:5000/python_app --no-cache
+  834  clear
+  835  vim Dockerfile 
+  836  ls
+  837  vim docker-compose.yml 
+  838  docker ps
+  839  clear
+  840  ls
+  841  docker stack deploy -c docker-compose.yml python
+  842  docker service ls
+  843  vim docker-compose.yml 
+  844  docker stack deploy -c docker-compose.yml python
+  845  docker service ls
+  846  clear
+  847  docker ls
+  848  docker ps
+  849  clear
+  850  docker ps -a
+  851  clear
+  852  docker system prune
+  853  clear
+  854  docker ps
+  855  docker ps -a
+  856  clear
+  857  docker service rm python
+  858  docker service ls
+  859  docker service python_python_app
+  860  docker service rm python_python_app
+  861  docker service rm python_redis
+  862  clear
+  863  docker-compose ps
+  864  docker service ls
+  865  docker stack deploy -c docker-compose.yml python
+  866  docker-compose ps
+  867  vim docker-compose.yml 
+  868  docker service rm python_redis
+  869  docker service rm python_python_app
+  870  docker service ls
+  871  docker ps
+  872  docker ps -a
+  873  clear
+  874  docker ps -a
+  875  systemctl status nginx
+  876  clear
+  877  l
+  878  clear
+  879  lsof -i -P -n
+  880  clear
+  881  docker ps
+  882  lsof -i -P -n
+  883  docker ps
+  884  clear
+  885  ls
+  886  cd python_app/
+  887  ls
+  888  docker stack deploy -c docker-compose.yml python
+  889  ls
+  890  vim Dockerfile 
+  891  docker ps
+  892  docker service ls
+  893  docker service rm brave_kepler
+  894  docker service rm python_redis
+  895  docker service rm python_python_app
+  896  docker service ls
+  897  ls
+  898  clear
+  899  ls
+  900  vim docker-compose.yml 
+  901  clear
+  902  ls
+  903  docker stack deploy -c docker-compose.yml python
+  904  clear
+  905  ls
+  906  clear
+  907  docker service rm python_python_app
+  908  docker service rm python_redis
+  909  clear
+  910  docker ps
+  911  docker service ls
+  912  ls
+  913  docker images
+  914  docker push 192.168.33.51:5000/python_app:latest
+  915  docker images
+  916  clear
+  917  docker pull 192.168.33.51:5000/python_app:latest
+  918  clear
+  919  ls
+  920  docker stack deploy -c docker-compose.yml python
+  921  ls
+  922  vim docker-compose.yml 
+  923  cd /mnt/nfs/
+  924  ls
+  925  ls -a
+  926  cd ..
+  927  df -h
+  928  s3fs docker /mnt/nfs -o allow_other,use_path_request_style,nonempty,url=http://192.168.33.53:9000,passwd_file=/etc/passwd-s3fs
+  929  clear
+  930  ls
+  931  cd ~ 
+  932  ls
+  933  cd python_app/
+  934  ls
+  935  docker ps
+  936  docker exec -dti 01471902e47f bash
+  937  docker ps
+  938  docker exec -ti 01471902e47f bash
+  939  docker ps
+  940  ls
+  941  vim docker-compose.yml 
+  942  docker stack deploy -c docker-compose.yml python
+  943  docker services ls
+  944  docker service ls
+  945  ls
+  946  cd /mnt/nfs/
+  947  ls
+  948  rm -rf *
+  949  ls
+  950  clear
+  951  cd ..
+  952  ls
+  953  clear
+  954  ls
+  955  cd ..
+  956  ls
+  957  clear
+  958  cd /root/
+  959  s
+  960  clear
+  961  ls
+  962  cd python_app/
+  963  clear
+  964  ls
+  965  vim Dockerfile 
+  966  vim /etc/nginx/sites-enabled/default 
+  967  systemctl restart nginx
+  968  systemctl status nginx
+  969  clear
+  970  docker container logs -f
+  971  docker service logs -f python_python_app
+  972  clear
+  973  ls
+  974  hisstory
+  975  history
+  976  clear
+  977  cd /root/
+  978  ls
+  979  git clone https://github.com/tiagosleal/curso-openshift
+  980  ls
+  981  cd curso-openshift/
+  982  clear
+  983  ls
+  984  clear
+  985  ls
+  986  mkdir history
+  987  ls
+  988  ls ~./
+  989  ls ~.
+  990  cd ..
+  991  ls -a
+  992  vim .bash_history 
+  993  history
+  994  ls
+  995  ls -a
+  996  ls
+  997  cd curso-openshift/
+  998  ls
+  999  history > history.txt
