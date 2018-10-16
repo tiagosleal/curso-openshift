@@ -1,0 +1,155 @@
+root@docker51:~# mkdir /mnt/registry
+root@docker51:~# s3fs registry /mnt/registry -o allow_other,use_path_request_style,nonempty,url=http://192.168.33.53:9000,passwd_file=/etc/passwd-s3fs -f -d
+
+
+root@docker51:~# docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/registry/:/var/lib/registry registry:2
+
+
+
+root@docker51:~# mkdir /mnt/registry/auth
+root@docker51:~# docker run -d -p 5000:5000 --restart=always --name registry -v /mnt/registry/:/var/lib/registry -v /mnt/registry/auth:/auth -e "REGISTRY_AUTH=htpasswd" -e "REGISTRY_AUTH_HTPASSWD_REALM=Curso Docker" -e "REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd" registry:2
+
+
+root@docker51:~# docker run --rm --entrypoint htpasswd registry:2 -Bbn alisson alisson >> /mnt/registry/auth/htpasswd
+root@docker51:~# cat /mnt/registry/auth/htpasswd 
+
+
+Criar arquivo /etc/docker/daemon.json
+{
+  "insecure-registries" : ["192.168.33.51:5000"]
+}
+
+#### Challange!!!!
+
+Criar um docker compose, que sobe o registry com autenticação
+
+version: "3"
+services:
+  private_registry:
+    image: registry:2
+    ports:
+      - 5000:5000
+    volumes:
+      - /mnt/registry:/var/lib/registry
+      - /mnt/registry/auth:/auth
+    environment:
+      - REGISTRY_AUTH=htpasswd
+      - REGISTRY_AUTH_HTPASSWD_REALM=Curso Docker
+      - REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd
+    restart: always
+
+# redes em docker
+
+ docker run --rm -ti -d --net alisson --ip 10.100.0.58 python_app
+
+
+
+# Rede no Compose
+version: "3"
+services:
+  web:
+    image: "php_app"
+    command: "php -S 0.0.0.0:8080 -t /srv/"
+networks:
+  default:
+    external:
+      name: everson
+
+
+
+# nginx config
+
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        server_name _;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+
+}
+
+
+#     load balance ----------------#
+
+upstream docker {
+  server 10.100.0.58:8080 ;
+}
+
+
+server {
+        listen 80 default_server;
+        server_name _;
+        location / {
+          proxy_pass http://docker ;
+        }
+
+}
+
+
+# ------------------------------------------------------------------------------ #
+
+
+Iniciando o cluster de swarm
+
+docker swarm init --advertise-addr=192.168.33.51
+
+
+
+
+root@docker51:~# docker tag python_app 192.168.33.51:5000/python_app
+root@docker51:~# docker login 192.168.33.51:5000
+root@docker51:~# docker push 192.168.33.51:5000/python_app
+
+
+# desafio
+
+Criar uma imagem com uma aplicacao em GO deste repositorio
+
+https://github.com/AlissonMMenezes/go-openshift.git
+
+via Dockerfile a gente vai criar a imagem
+Criar um docker-compose e fazer o stack deploy com 4 replicas
+
+# usar a imagem do ubuntu
+# instalar o go -> apt install go
+# go get github.com/beego/bee
+# go build
+# ./hello
+
+
+# Dockerfile - python_app
+
+FROM ubuntu
+MAINTAINER alisson.machado@4linux.com.br
+
+RUN apt clean
+RUN apt update
+RUN apt install git python python-pip -y
+RUN git clone -b sessao https://github.com/AlissonMMenezes/python-openshift.git /root/python-openshift
+RUN pip install -r /root/python-openshift/requirements.txt
+
+
+ENTRYPOINT ["python","/root/python-openshift/app.py"]
+
+
+# buildando o container
+docker build . -t 192.168.33.51:5000/python_app --no-cache
+
+
+# docker-compose
+version: "3"
+services:
+  python_app:
+    image: "192.168.33.51:5000/python_app:latest"
+    hostname: "python-app"
+    ports:
+    - "80:8080"
+    volumes:
+    - /mnt/nfs:/root/python-openshift/static/imagens
+
+
+# -----------------
+root@docker51:~/python_app# docker stack deploy -c docker-compose.yml python
