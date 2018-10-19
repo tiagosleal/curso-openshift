@@ -1,0 +1,21 @@
+version: "3"
+services:
+  python_app:
+    image: "192.168.33.51:5000/python_app:latest"
+    hostname: "python-app"
+    ports:
+    - "8080:8080"
+    volumes:
+    - /mnt/nfs:/root/python-openshift/static/imagens
+    environment:
+      - var1=teste
+      - var2=testando_login
+      - REDIS_SERVER=redis
+    deploy:
+      replicas: 2
+  
+  redis:
+    hostname: "redis"
+    image: "redis"
+    deploy:
+      replicas: 1  

@@ -1,0 +1,9 @@
+version: "3"
+services: 
+  go_alterado:
+   image: "192.168.33.51:5000/go_app"
+   hostname: "go_app_alterado" 
+   deploy:
+     replicas: 2
+   ports:
+   - 8084:8080

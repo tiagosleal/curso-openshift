@@ -1,0 +1,9 @@
+version: "3"
+services: 
+  web:
+   image: "192.168.33.51:5000/php_app"
+   command: "php -S 0.0.0.0:8080 -t /srv/"
+   deploy:
+     replicas: 2
+   ports:
+   - 8082:8080

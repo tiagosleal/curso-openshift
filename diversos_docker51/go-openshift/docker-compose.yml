@@ -1,0 +1,9 @@
+version: "3"
+services: 
+  go:
+   image: "192.168.33.51:5000/go_app"
+   hostname: "go_app" 
+   deploy:
+     replicas: 2
+   ports:
+   - 8083:8080

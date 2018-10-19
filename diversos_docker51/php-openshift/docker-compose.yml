@@ -1,0 +1,7 @@
+version: "3"
+services:
+  php_app:
+    image: "php_app"
+    hostname: "php-app"
+    ports:
+    - "80:8080"
